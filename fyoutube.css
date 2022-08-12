@@ -1,0 +1,198 @@
+:root{
+    --color-:#673ab7; 
+}
+.header1{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.5),rgba(4,9,30,0.5)),url("UVCE_New.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+body{
+    font-family: serif;
+    line-height: 1.5;
+    background-color: #c6cde0;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;padding: 0;
+}
+a{
+    text-decoration: none;
+    
+}
+li{
+    list-style: none;
+}
+.header .logo a img{
+    /* background-color: blue; */
+    /* padding: 0 20px; */
+    height: 50px;
+}
+.header .nav{
+    /* background-color: green; */
+    padding: 0 20px;
+}
+.container{
+    max-width: 1170px;
+    /* background-color: red; */
+    margin: auto;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .nav ul li{
+    display: inline-block;
+    margin-left: 40px;
+    /* background-color: red; */
+}
+.header{
+    background-color: var(--color-);
+    padding: 15px 0;
+    position: relative;
+    margin: 0;
+}
+.header .logo a{
+    font-size: 30px;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+.header .nav ul li a{
+    display: block;
+    font-size: 16px;
+    /* background-color: red; */
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 4px 10px;
+    transition: all .3s ease;
+}
+
+.header .nav ul li a:hover,.header .nav ul li  a .active{
+    color: #ffffff;
+    box-shadow: 0 0 15px white;
+}
+.header #check-nav{
+    position: absolute;/*amele noda loude*/
+    opacity: 0 ;
+    pointer-events: none ;
+} 
+
+.for-toggle{
+    height: 34px;
+    width: 44px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;/*it give what type of cursor u want add on the screen */
+    align-items: center;
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+   
+}
+.for-toggle span{
+    display: block;
+    height: 2px;
+    width: 20px;
+  background-color: var(--color-);
+   position: relative;
+}
+.for-toggle span::before,.for-toggle span::after{
+    content: '' ;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:var(--color-);
+    left: 0;
+}
+.for-toggle span::before{
+    top: -6px;
+}
+.for-toggle span::after{
+    top: 6px;
+}
+.text{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text h1{
+    font-size: 60px;
+    font-family: 'Alumni Sans Inline One', cursive;
+    text-shadow: 0 0 15px yellow;
+    text-transform: uppercase;
+}
+.text p{
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    text-shadow: 0 0 8px violet;
+    text-transform: capitalize;
+}
+.text a{
+   display: inline-block;
+   color: white;
+   text-shadow: red;
+   padding: 10px 10px;
+   border: 2px solid white;
+   margin-top: 40px;
+   text-decoration: none;
+   font-size: 20px;
+   border-radius: 5px;
+   transition: all .5s ease;
+   box-shadow: 0 0 15px white;
+}
+.text a:hover{
+    background-color: orange;
+
+}
+
+
+@media(max-width:991px) {
+    .for-toggle{
+        display: flex;
+    }
+    .header .nav{
+        position: absolute;
+
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background-color:var(--color-);
+        border-top: 2px solid rgba(255, 255, 255, 0.2);
+        opacity: 0;
+        visibility: hidden;
+    }
+    .header .nav ul li{
+        display: block;
+        margin: 0%;
+    }
+    .header #check-nav:checked ~ .nav{
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+    } 
+.header #check-nav:focus ~ .for-toggle{
+    box-shadow: 0 0 15px orange;
+}
+
+    .header #check-nav:checked ~ .for-toggle span{
+        background-color:transparent;
+    }
+    .header #check-nav:checked ~ .for-toggle span::before{
+        top: 0;
+        transform: rotate(45deg);
+    }
+    .header #check-nav:checked ~ .for-toggle span::after{
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+
+    
+}
